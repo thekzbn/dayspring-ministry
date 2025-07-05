@@ -1,0 +1,491 @@
+@font-face {
+    font-family: 'Inter Tight';
+    src: url('../fonts/InterTight-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+:root {
+    --khaki-gold-light: #F0E68C; /* Lighter khaki/gold */
+    --khaki-gold-medium: #B8860B; /* Medium khaki/gold */
+    --khaki-gold-dark: #8B4513; /* Darker khaki/gold (saddle brown/darker gold) */
+    --text-dark: #333;
+    --text-light: #f8f8f8;
+    --background-light: #f8f8f8;
+    --background-dark: #333;
+    --accent-color: var(--khaki-gold-medium);
+    --hover-color: var(--khaki-gold-light);
+    --footer-background: #222;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for rem calculation */
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--khaki-gold-medium);
+    border-radius: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--khaki-gold-dark);
+}
+
+body {
+    font-family: 'Inter Tight', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--background-light);
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+.main-header {
+    background-color: var(--background-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: none; /* No box-shadow */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    height: 3rem; /* Adjust as needed */
+    width: auto;
+    animation: rotateIn 0.8s ease-out forwards;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--khaki-gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links li a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0.15rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 2rem;
+    height: 0.2rem;
+    background-color: var(--text-dark);
+    margin: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.main-footer {
+    background-color: var(--footer-background);
+    color: var(--text-light);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 80rem;
+    margin: 0 auto 2rem auto;
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 15rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    color: var(--khaki-gold-light);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--khaki-gold-light);
+}
+
+.social-links a {
+    display: inline-block;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.3rem;
+    background-color: var(--khaki-gold-dark);
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--khaki-gold-medium);
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: #aaa;
+    padding-top: 1rem;
+    border-top: 0.05rem solid #444;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 0.3rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: var(--khaki-gold-dark);
+    transform: translateY(-0.1rem);
+}
+
+/* General Section Styling */
+section {
+    padding: 4rem 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h1, section h2 {
+    font-size: 2.5rem;
+    color: var(--khaki-gold-dark);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Micro-animations - Initial states and keyframes */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(2rem);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-2rem);
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(2rem);
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover effects for buttons/icons */
+.hover-lift:hover {
+    transform: translateY(-0.2rem);
+}
+
+.hover-bounce:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-0.2rem); }
+}
+
+/* Nav Link Animation */
+@keyframes rotateIn {
+    0% {
+        transform: rotate(-90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 48rem) { /* 768px */
+    .navbar {
+        padding: 0 1.5rem;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 4.5rem; /* Height of header */
+        height: calc(100vh - 4.5rem);
+        background-color: var(--background-dark);
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        z-index: 999;
+        padding-top: 3rem;
+    }
+
+    .nav-links li {
+        opacity: 0;
+    }
+
+    .nav-links li a {
+        color: var(--text-light);
+        font-size: 1.2rem;
+        padding: 1rem 0;
+    }
+
+    .nav-links.nav-active {
+        transform: translateX(0%);
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-menu.toggle .line1 {
+        transform: rotate(-45deg) translate(-0.35rem, 0.35rem);
+    }
+
+    .burger-menu.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger-menu.toggle .line3 {
+        transform: rotate(45deg) translate(-0.35rem, -0.35rem);
+    }
+
+    .main-header {
+        padding: 0.8rem 0;
+    }
+
+    .logo-img {
+        height: 2.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    section h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer-section {
+        min-width: unset;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Animations for mobile menu links */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.nav-links li {
+    animation: navLinkFade 0.5s ease forwards var(--animation-delay, 0s);
+}
+
+/* Scroll reveal animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Specific reveal animations */
+.reveal-on-scroll.slide-in-left.is-visible {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.reveal-on-scroll.slide-in-right.is-visible {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.reveal-on-scroll.scale-in.is-visible {
+    animation: scaleIn 0.6s ease-out forwards;
+}
