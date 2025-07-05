@@ -1,0 +1,180 @@
+/* Specific styles for the Home page */
+
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1500x800.png?text=Ministry+Hero+Image') no-repeat center center/cover;
+    color: var(--text-light);
+    height: calc(100vh - 4.5rem); /* Adjust based on header height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 50rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--khaki-gold-light);
+    line-height: 1.2;
+    animation-delay: 0.2s; /* Apply animation delay */
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-light);
+    animation-delay: 0.4s;
+}
+
+.hero-content p span {
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--khaki-gold-light);
+}
+
+.hero-content .btn {
+    animation-delay: 0.6s;
+}
+
+.mission-section {
+    background-color: var(--background-light);
+    padding: 5rem 2rem;
+}
+
+.mission-section h2 {
+    color: var(--khaki-gold-dark);
+    margin-bottom: 3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+    max-width: 65rem;
+    margin: 0 auto;
+}
+
+.value-item {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: none; /* No box-shadow */
+}
+
+.value-item:hover {
+    transform: translateY(-0.5rem);
+}
+
+.value-item h3 {
+    font-size: 1.5rem;
+    color: var(--khaki-gold-medium);
+    margin-bottom: 1rem;
+}
+
+.value-item p {
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.meeting-section {
+    background-color: var(--khaki-gold-light);
+    padding: 5rem 2rem;
+    color: var(--text-dark);
+}
+
+.meeting-section h2 {
+    color: var(--khaki-gold-dark);
+    margin-bottom: 1.5rem;
+}
+
+.meeting-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.meeting-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.info-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 1.5rem 2.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    min-width: 15rem;
+    transition: transform 0.3s ease;
+    box-shadow: none; /* No box-shadow */
+}
+
+.info-item:hover {
+    transform: translateY(-0.3rem);
+}
+
+.info-item h3 {
+    font-size: 1.3rem;
+    color: var(--khaki-gold-dark);
+    margin-bottom: 0.5rem;
+}
+
+.info-item p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for home page */
+@media (max-width: 48rem) {
+    .hero-section {
+        height: 80vh;
+        padding: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .mission-section {
+        padding: 3rem 1rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .meeting-section {
+        padding: 3rem 1rem;
+    }
+
+    .meeting-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .info-item {
+        min-width: unset;
+        width: 100%;
+        padding: 1.2rem 1.5rem;
+    }
+}
+
+@media (max-width: 30rem) { /* 480px */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
